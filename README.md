@@ -41,34 +41,44 @@ Follow these step-by-step instructions to get your development environment runni
 Open your terminal (e.g., Git Bash) and go to your backend folder:
 ```bash
 cd ~/OneDrive/Desktop/MultiAgent/backend
-
+```
 
 2. Set Up a Virtual Environment
 Create an isolated virtual environment to manage dependencies securely:
 
 Bash
+```
 python -m venv venv
+```
 3. Activate the Virtual Environment
 On Windows (Git Bash / Command Prompt):
 
 Bash
+```
 source venv/Scripts/activate
+```
 On macOS/Linux:
-
 Bash
+```
 source venv/bin/activate
+```
 When successfully activated, your terminal prompt will show (venv) at the beginning.
 
 4. Install Dependencies
 Ensure your environment has all the vital packages required for the agent ecosystem:
 
 Bash
+```
 pip install fastapi uvicorn langchain-core langchain-google-genai browser-use python-dotenv
+```
 5. Install Browser Automation Drivers
+
 Since browser-use drives a physical browser instance behind the scenes, initialize Playwright's required binaries:
 
 Bash
+```
 playwright install
+```
 🔑 Environment Variables Setup
 The system relies on a secure environment file to handle API authentication keys safely without committing them to version control.
 
@@ -84,7 +94,9 @@ GOOGLE_API_KEY=your_actual_gemini_api_key_here
 Once your virtual environment is active and variables are populated, start up the FastAPI local development server using Uvicorn:
 
 Bash
+```
 uvicorn app.main:app --reload
+```
 Understanding the Terminal Logs:
 Will watch for changes... indicates that the --reload hot-reloading flag is working. The server will automatically restart whenever you save file updates.
 
